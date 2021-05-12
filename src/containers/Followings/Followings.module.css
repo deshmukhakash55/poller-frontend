@@ -1,0 +1,22 @@
+.FollowingBlockTitle {
+	width: 50%;
+	margin: 1em auto;
+	font-size: 20px;
+}
+
+.EmptyFollowings {
+	padding: 2em;
+	margin: 1em auto;
+	width: 50%;
+	text-align: center;
+}
+
+@media (max-width: 600px) {
+	.FollowingBlockTitle {
+		width: 80%;
+	}
+
+	.EmptyFollowings {
+		width: 80%;
+	}
+}

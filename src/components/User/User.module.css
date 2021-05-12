@@ -1,0 +1,41 @@
+.UserPaper {
+	margin: 1em;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.UserAvatarNameAndJoinedOn {
+	display: flex;
+	gap: 1em;
+}
+
+.UserNameAndJoinedOn {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+
+.UserJoinedOn {
+	font-size: 12px;
+}
+
+.UserAvatar {
+	background-size: 2.25em !important;
+	height: 2.25em;
+	width: 2.25em;
+	background-repeat: no-repeat !important;
+}
+
+.Interests {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 1em;
+	gap: 0.5em;
+}
+
+.Follow {
+	display: flex;
+	justify-content: center;
+}

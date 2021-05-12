@@ -1,0 +1,9 @@
+.NewPollButton {
+	position: fixed !important;
+	bottom: 15%;
+	right: 13%;
+	color: white !important;
+	height: 2.5em;
+	width: 2.5em;
+	background-color: #264c77 !important;
+}

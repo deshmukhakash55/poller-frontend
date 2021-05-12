@@ -1,0 +1,47 @@
+.MainContent {
+	height: 90vh;
+	display: flex;
+	flex-grow: 1;
+}
+
+.MainTabs {
+	width: 17%;
+	align-items: center;
+	height: 100%;
+}
+
+.TabContent {
+	height: 100%;
+	overflow-y: scroll;
+	width: 83%;
+	display: flex;
+	gap: 1em;
+}
+
+.Polls {
+	padding: 1em;
+	width: 60%;
+	height: fit-content;
+}
+
+@media (max-width: 600px) {
+	.MainTabs {
+		height: fit-content;
+		width: 100%;
+	}
+
+	.MainContent {
+		flex-direction: column;
+	}
+
+	.Polls {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.TabContent {
+		width: 100%;
+	}
+}

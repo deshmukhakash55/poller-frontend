@@ -1,0 +1,35 @@
+.RecommendedUsers {
+	margin: 1em;
+}
+
+.Avatar {
+	background-size: 2.25em !important;
+	height: 2.25em;
+	width: 2.25em;
+	background-repeat: no-repeat !important;
+}
+
+.User {
+	display: flex;
+	gap: 1em;
+	align-items: center;
+}
+
+.UserName {
+	width: 70%;
+	overflow-x: hidden;
+}
+
+.AvatarBlock {
+	margin-top: 0 !important;
+}
+
+.ShowMore {
+	cursor: pointer;
+	text-align: right;
+}
+
+.RecommendedUsersTitle {
+	display: flex;
+	gap: 1em;
+}

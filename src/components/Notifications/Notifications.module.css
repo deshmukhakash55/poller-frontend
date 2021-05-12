@@ -1,0 +1,57 @@
+.NotificationDetails {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.NotificationTime {
+	font-size: 10px;
+}
+
+.NotificationsContent {
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	align-items: center;
+	overflow-y: scroll;
+}
+
+.NotificationsPaper {
+	width: 50%;
+	margin: 1em;
+	height: fit-content;
+}
+
+.NotificationsDivider {
+	margin-top: 1em !important;
+}
+
+.NotificationsTitleBlock {
+	display: flex;
+	align-items: center;
+	margin-top: 2em;
+	gap: 1em;
+	width: 50%;
+}
+
+.NotificationsTitleText {
+	font-size: 20px;
+}
+
+.NoNotificationMessage {
+	width: 100%;
+	margin: 1em auto;
+	font-size: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 10vh;
+	color: #707070;
+}
+
+@media (max-width: 600px) {
+	.NotificationsPaper {
+		width: 80%;
+	}
+}

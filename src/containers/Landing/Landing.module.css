@@ -1,0 +1,39 @@
+.Landing {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #264c77;
+}
+
+.LoginAndSignupCard {
+	margin: 1em;
+}
+
+.LandingForm {
+	width: 40vw;
+}
+
+@media (max-width: 600px) {
+	.Landing {
+		flex-direction: column;
+		justify-content: center;
+		gap: 1em;
+		padding: 1em 0;
+		height: auto;
+	}
+
+	.LandingForm {
+		width: 90%;
+		max-height: 89%;
+	}
+}
+
+.LoginStatusCheckLanding {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}

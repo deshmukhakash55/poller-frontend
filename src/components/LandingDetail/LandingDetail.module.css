@@ -1,0 +1,48 @@
+.LogoAndDetail {
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+	width: 45%;
+	height: 80%;
+	color: #e4e4e4;
+}
+
+.Logo {
+	background: url('../../assets/logo.png');
+	width: 12em;
+	height: 5em;
+	background-size: 12em 5em;
+	background-repeat: no-repeat;
+}
+
+.Detail {
+	font-size: 18px;
+	line-height: 2em;
+}
+
+.LandingContactDetail {
+	line-height: 2em;
+	font-size: 12px;
+}
+
+.Email {
+	text-decoration: none;
+	color: white;
+}
+
+.Email:visited,
+.Email:active {
+	color: white;
+}
+
+@media (max-width: 600px) {
+	.Detail {
+		display: none;
+	}
+
+	.LogoAndDetail {
+		width: 60%;
+		height: 11%;
+		align-items: center;
+	}
+}

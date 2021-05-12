@@ -1,0 +1,32 @@
+.UserVerify {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #264c77;
+}
+
+.MessageBlock {
+	width: 40vw;
+	height: 20vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.Message {
+	color: #264c77;
+}
+
+.Progress {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+}
+
+.MessageText {
+	text-align: center;
+}

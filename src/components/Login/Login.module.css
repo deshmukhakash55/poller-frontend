@@ -1,0 +1,60 @@
+.LoginForm {
+	padding: 0.5em;
+}
+
+.FormControl {
+	margin: 1em;
+}
+
+.FormOption {
+	color: #264c77;
+	margin: auto 3%;
+}
+
+.FormOptions {
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	margin-top: 2em;
+	margin-bottom: 5%;
+}
+
+.FormAction {
+	display: flex;
+	justify-content: center;
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+
+.FormError {
+	text-align: center;
+	color: #b01c12;
+	margin-top: 1em;
+	margin-bottom: 1.5em;
+}
+
+.ForgotPasswordDialogTitle {
+	padding-bottom: 0;
+}
+
+.SendResetPasswordLinkSuccessMessage {
+	text-align: center;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.SendResetPasswordLinkProgressBlock {
+	height: 20vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.SendResetPasswordLinkProgressMessage {
+	margin-top: 2em;
+}
+
+.DialogPaperBlock {
+	width: 45vw;
+}

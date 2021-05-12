@@ -1,0 +1,17 @@
+.SearchResults {
+	height: 100%;
+}
+
+.SearchResultsLoadingSpinner {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: 1em;
+	align-items: center;
+	height: 70vh;
+}
+
+.SearchResultsLoadingMessage {
+	font-size: 18px;
+	color: #3d3d3d;
+}

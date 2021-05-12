@@ -1,0 +1,118 @@
+.Navbar {
+	display: flex;
+	align-items: center;
+	padding-top: 0;
+	padding-left: 0.5em;
+	padding-bottom: 0;
+}
+
+.NavbarOptions {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+
+.MenuHamburger {
+	display: none !important;
+}
+
+.NavDrawerPaper {
+	width: 80vw;
+}
+
+.NavMenuItem {
+	margin-left: 1em;
+}
+
+.SearchInputBlock {
+	width: 100%;
+}
+
+.SearchIcon {
+	position: absolute;
+	top: 30%;
+	padding-left: 0.45em;
+	z-index: 1;
+}
+
+.SearchInputRoot {
+	width: 100%;
+	color: white !important;
+	background-color: #142e59;
+	border-radius: 5px;
+}
+
+.SearchInput {
+	padding-left: 2.5em !important;
+	height: 1.75em !important;
+}
+
+.LogoAndMobileMenu {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.Logo {
+	margin-left: 1em;
+	background: url('../../assets/logo.png');
+	background-size: 7em 3em;
+	background-repeat: no-repeat;
+	width: 7em;
+	height: 3em;
+	cursor: pointer;
+}
+
+@media (max-width: 600px) {
+	.MenuHamburger {
+		display: block !important;
+		padding-left: 1.5em;
+	}
+
+	.NavbarOptions {
+		display: none;
+	}
+
+	.Logo {
+		margin-left: 0;
+	}
+}
+
+.ShowAllNotificationsMenuItem {
+	text-align: center;
+	width: 100%;
+	font-size: 10px;
+}
+
+.NotificationMessage {
+	margin-bottom: 0.5em;
+}
+
+.NotificationDate {
+	align-self: flex-end;
+	font-size: 10px;
+}
+
+.NotificationMenuItem {
+	flex-direction: column;
+}
+
+.NotificationDivider {
+	width: 100%;
+	margin: 0.5em !important;
+}
+
+.ProfileDrawerCircle {
+	width: 8em;
+	height: 8em;
+	background-repeat: no-repeat !important;
+	background-size: 8em 8em !important;
+	border-radius: 50%;
+	margin: auto;
+}
+
+.ProfileDrawerName {
+	text-align: center;
+	margin: 1em;
+	font-size: 10px;
+}

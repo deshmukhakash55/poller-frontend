@@ -1,0 +1,119 @@
+.ProfileContent {
+	height: 90vh;
+	display: flex;
+	flex-grow: 1;
+	overflow-y: scroll;
+}
+
+.ProfileFileInput {
+	display: none;
+}
+
+.ProfilePaper {
+	margin: 1em auto;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1em;
+	height: fit-content;
+}
+
+.ProfileNameInput,
+.ProfileEmailInput,
+.ProfileInterestsInput {
+	width: 100%;
+	display: flex;
+	gap: 1em;
+	align-items: center;
+	justify-content: center;
+	margin: 1em;
+}
+
+.ProfileTextFields {
+	width: 100%;
+}
+
+.ProfileDivider {
+	width: 100%;
+	margin: 1em !important;
+}
+
+.InterestsList {
+	list-style: none;
+	padding: 0.5em;
+	margin-top: 0;
+	display: flex;
+	gap: 0.5em;
+	flex-wrap: wrap;
+}
+
+.ProfileActions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1em;
+	gap: 1em;
+}
+
+.Interests {
+	width: 100%;
+}
+
+.Avatar {
+	background-repeat: no-repeat !important;
+	background-size: 20em 20em !important;
+	width: 20em;
+	height: 20em;
+	margin: 1em;
+	border-radius: 50%;
+}
+
+.ProfileTitle {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	gap: 1em;
+}
+
+.ProfileTitleText {
+	font-size: 20px;
+}
+
+.UploadFileNameBlock {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	font-size: 12px;
+	margin-bottom: 2em;
+}
+
+.UploadFileDeleteIcon {
+	color: #707070;
+	cursor: pointer;
+}
+
+.UploadButton {
+	display: flex;
+	justify-content: center;
+}
+
+@media (max-width: 600px) {
+	.Avatar {
+		background-size: 10em 10em !important;
+		width: 10em;
+		height: 10em;
+	}
+
+	.ProfilePaper {
+		width: 80%;
+	}
+}
+
+.UpdateProfileFailure {
+	background-color: #9e0000 !important;
+}
+
+.UpdateProfileSuccess {
+	background-color: #009e15 !important;
+}

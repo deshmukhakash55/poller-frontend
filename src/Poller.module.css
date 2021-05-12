@@ -1,0 +1,14 @@
+.NetworkErrorBlock {
+	background-color: #9e0000 !important;
+}
+
+.Poller {
+	height: 100%;
+}
+
+@media (max-width: 600px) {
+	.Poller {
+		display: flex;
+		width: 100%;
+	}
+}

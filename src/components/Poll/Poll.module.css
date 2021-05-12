@@ -1,0 +1,167 @@
+.PollInfo {
+	margin: 1em;
+	padding: 1em;
+	display: flex;
+	gap: 1em;
+	align-items: center;
+	margin-bottom: 0;
+}
+
+.PolleeAvatar {
+	background-size: 2em !important;
+	background-repeat: no-repeat !important;
+	width: 3em;
+	height: 2em;
+}
+
+.PollPaper {
+	width: 50vw;
+	margin: 1em;
+	padding-bottom: 1em;
+}
+
+.PolleeNameAndPollStartDate {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.3em;
+	width: 100%;
+}
+
+.PollQuestion {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	margin: 0.5em;
+	margin-bottom: 1.5em;
+}
+
+.StartDate {
+	font-size: 10px;
+}
+
+.PollBlock {
+	margin: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.PollOptions {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	align-items: center;
+	justify-content: center;
+}
+
+.PollOption {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.PollOptionButton {
+	border-width: 2px !important;
+	border-style: solid !important;
+	border-radius: 3em !important;
+	width: 80%;
+}
+
+.PollMenuOption {
+	display: flex;
+	gap: 0.5em;
+	align-items: center;
+}
+
+.OptionsStat {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+}
+
+.OptionStat {
+	min-height: 2em;
+	width: 50%;
+	border-width: 3px;
+	border-style: solid;
+	border-radius: 3em;
+	background-color: #f1f1f1;
+	position: relative;
+}
+
+.OptionsStatBlock {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	align-items: center;
+	justify-content: center;
+}
+
+.OptionStatHighlight {
+	position: absolute;
+	min-height: 2em;
+	border-radius: 3em;
+	display: flex;
+	color: white;
+	align-items: center;
+	justify-content: center;
+}
+
+.OptionStatText {
+	width: 25%;
+}
+
+.UnselectedOptionText {
+	color: #636363;
+}
+
+.OptionStatResponseNotifier {
+	width: 5%;
+}
+
+.OptionStatPercentage {
+	width: 9%;
+}
+
+.OptionStatTotalResponsesAndEndDate {
+	width: 100%;
+	margin-top: 2em;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 4em;
+	font-size: 12px;
+}
+
+.OptionStatTotalResponses {
+	padding-left: 4em;
+}
+
+.OptionStatEndDate {
+	padding-right: 4em;
+}
+
+.ReportDialogContent {
+	text-align: center;
+	width: 40vw;
+}
+
+.SuccessReportPollText {
+	color: #013f01;
+}
+
+.ProgressReportPollText {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 600px) {
+	.PollPaper {
+		width: 90%;
+	}
+}
