@@ -142,7 +142,7 @@ const Poll = (props) => {
 							></div>
 						</div>
 						<div className={classes.OptionStatPercentage}>
-							{pollResponseStat.percentage} %
+							{pollResponseStat.percentage.toFixed(1)} %
 						</div>
 					</div>
 				))}
