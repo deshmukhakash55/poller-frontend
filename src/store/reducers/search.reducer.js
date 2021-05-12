@@ -82,6 +82,16 @@ export const searchReducer = (state = initialSearchState, action) => {
 				...state,
 				searchedPolls: reUpdatedSearchedPolls
 			};
+		case searchActionTypes.ADD_SEARCHED_POLL_RESPONSE:
+			const searchedPollsWithUpdatedResponse =
+				getPollsWithUpdateResponseOfPollIn(
+					state.searchedPolls,
+					action.payload
+				);
+			return {
+				...state,
+				searchedPolls: searchedPollsWithUpdatedResponse
+			};
 		case searchActionTypes.INITIALIZE_SEARCH:
 			return {
 				...initialSearchState
@@ -91,4 +101,19 @@ export const searchReducer = (state = initialSearchState, action) => {
 				...state
 			};
 	}
+};
+
+const getPollsWithUpdateResponseOfPollIn = (polls, payload) => {
+	const respondedToPollIndex = polls.findIndex(
+		(poll) => poll.id === payload.pollId
+	);
+	const respondedToPoll = {
+		...polls[respondedToPollIndex],
+		pollResponseStats: payload.pollResponseStats,
+		userResponse: payload.userResponse,
+		totalResponses: payload.totalResponses
+	};
+	const updatedPolls = [...polls];
+	updatedPolls[respondedToPollIndex] = respondedToPoll;
+	return [...updatedPolls];
 };

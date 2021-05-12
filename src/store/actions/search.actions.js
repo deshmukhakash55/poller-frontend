@@ -42,6 +42,16 @@ export const reportSearchedPoll = (pollId) => ({
 	payload: { pollId }
 });
 
+export const addSearchedPollResponse = ({
+	pollId,
+	pollResponseStats,
+	userResponse,
+	totalResponses
+}) => ({
+	type: searchActionTypes.ADD_SEARCHED_POLL_RESPONSE,
+	payload: { pollId, pollResponseStats, userResponse, totalResponses }
+});
+
 export const initializeSearch = () => ({
 	type: searchActionTypes.INITIALIZE_SEARCH
 });

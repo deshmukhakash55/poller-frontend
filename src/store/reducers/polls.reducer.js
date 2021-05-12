@@ -133,20 +133,50 @@ export const pollsReducer = (state = initialPollsState, action) => {
 				isAddPollResponseProgress: false
 			};
 		case pollsActionTypes.ADD_POLL_RESPONSE_SUCCESS:
-			const respondedToPollIndex = state.polls.findIndex(
-				(poll) => poll.id === action.payload.pollId
-			);
-			const respondedToPoll = {
-				...state.polls[respondedToPollIndex],
-				pollResponseStats: action.payload.pollResponseStats,
-				userResponse: action.payload.userResponse,
-				totalResponses: action.payload.totalResponses
-			};
-			const updatedPolls = [...state.polls];
-			updatedPolls[respondedToPollIndex] = respondedToPoll;
+			const recommendedPollsWithUpdatedResponse =
+				getPollsWithUpdateResponseOfPollIn(
+					state.recommendedPolls,
+					action.payload
+				);
+			const yourPollsWithUpdatedResponse =
+				getPollsWithUpdateResponseOfPollIn(
+					state.yourPolls,
+					action.payload
+				);
+			const respondedToPollsWithUpdatedResponse =
+				getPollsWithUpdateResponseOfPollIn(
+					state.respondedPolls,
+					action.payload
+				);
+			const bookmarkedPollsWithUpdatedResponse =
+				getPollsWithUpdateResponseOfPollIn(
+					state.bookmarkedPolls,
+					action.payload
+				);
+			const endedPollsWithUpdatedResponse =
+				getPollsWithUpdateResponseOfPollIn(
+					state.endedPolls,
+					action.payload
+				);
+			const followingsPollsWithUpdatedResponse =
+				getPollsWithUpdateResponseOfPollIn(
+					state.followingsPolls,
+					action.payload
+				);
+			const trendingPollsWithUpdatedResponse =
+				getPollsWithUpdateResponseOfPollIn(
+					state.trendingPolls,
+					action.payload
+				);
 			return {
 				...state,
-				polls: [...updatedPolls],
+				recommendedPolls: recommendedPollsWithUpdatedResponse,
+				yourPolls: yourPollsWithUpdatedResponse,
+				respondedPolls: respondedToPollsWithUpdatedResponse,
+				bookmarkedPolls: bookmarkedPollsWithUpdatedResponse,
+				endedPolls: endedPollsWithUpdatedResponse,
+				followingsPolls: followingsPollsWithUpdatedResponse,
+				trendingPolls: trendingPollsWithUpdatedResponse,
 				isAddPollResponseSuccess: true,
 				isAddPollResponseFailure: false,
 				addPollResponseError: ''
@@ -548,3 +578,18 @@ const markPollAsReportedIn = (polls, reportedPollId) =>
 		}
 		return { ...poll, hasUserReportedPoll: true };
 	});
+
+const getPollsWithUpdateResponseOfPollIn = (polls, payload) => {
+	const respondedToPollIndex = polls.findIndex(
+		(poll) => poll.id === payload.pollId
+	);
+	const respondedToPoll = {
+		...polls[respondedToPollIndex],
+		pollResponseStats: payload.pollResponseStats,
+		userResponse: payload.userResponse,
+		totalResponses: payload.totalResponses
+	};
+	const updatedPolls = [...polls];
+	updatedPolls[respondedToPollIndex] = respondedToPoll;
+	return [...updatedPolls];
+};

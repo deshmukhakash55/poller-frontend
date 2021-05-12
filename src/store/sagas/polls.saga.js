@@ -68,12 +68,20 @@ const sendAddNewPollRequestFor = (poll) => {
 };
 
 function* addPollResponseStart(action) {
-	yield put(pollsActions.addNewPollProgress());
+	yield put(pollsActions.addPollResponseProgress());
 	try {
 		const response = yield sendAddPollResponseRequestFor(action.payload);
 		if (response.status === 201) {
 			yield put(
 				pollsActions.addPollResponseSuccess({
+					pollId: response.data.pollId,
+					pollResponseStats: response.data.pollResponseStats,
+					userResponse: response.data.userResponse,
+					totalResponses: response.data.totalResponses
+				})
+			);
+			yield put(
+				searchActions.addSearchedPollResponse({
 					pollId: response.data.pollId,
 					pollResponseStats: response.data.pollResponseStats,
 					userResponse: response.data.userResponse,
