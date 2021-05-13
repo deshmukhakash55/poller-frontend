@@ -206,6 +206,29 @@ export const loadBookmarkedPollsFailure = (reason) => ({
 	payload: { reason }
 });
 
+export const reloadPollStart = (pollId) => ({
+	type: pollsActionTypes.RELOAD_POLL_START,
+	payload: { pollId }
+});
+
+export const reloadPollProgress = () => ({
+	type: pollsActionTypes.RELOAD_POLL_PROGRESS
+});
+
+export const reloadPollEnd = () => ({
+	type: pollsActionTypes.RELOAD_POLL_END
+});
+
+export const reloadPollSuccess = ({ poll }) => ({
+	type: pollsActionTypes.RELOAD_POLL_SUCCESS,
+	payload: { poll }
+});
+
+export const reloadPollFailure = (reason) => ({
+	type: pollsActionTypes.RELOAD_POLL_FAILURE,
+	payload: { reason }
+});
+
 export const bookmarkPollStart = (pollId) => ({
 	type: pollsActionTypes.BOOKMARK_POLL_START,
 	payload: { pollId }

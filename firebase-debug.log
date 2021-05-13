@@ -1,0 +1,35 @@
+[debug] [2021-05-13T07:15:49.204Z] ----------------------------------------------------------------------
+[debug] [2021-05-13T07:15:49.206Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
+[debug] [2021-05-13T07:15:49.207Z] CLI Version:   9.8.0
+[debug] [2021-05-13T07:15:49.207Z] Platform:      linux
+[debug] [2021-05-13T07:15:49.207Z] Node Version:  v14.16.1
+[debug] [2021-05-13T07:15:49.207Z] Time:          Thu May 13 2021 12:45:49 GMT+0530 (India Standard Time)
+[debug] [2021-05-13T07:15:49.207Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-05-13T07:15:49.213Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-13T07:15:49.213Z] > authorizing via signed-in user
+[debug] [2021-05-13T07:15:49.213Z] [iam] checking project poller-e5529 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-05-13T07:15:49.215Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-13T07:15:49.216Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-13T07:15:49.638Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Thu, 13 May 2021 07:15:49 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-13T07:15:49.685Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/poller-e5529:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-05-13T07:15:51.411Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 13 May 2021 07:15:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1305","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-13T07:15:51.424Z] > refreshing access token with scopes: []
+[debug] [2021-05-13T07:15:51.426Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-13T07:15:51.801Z] <<< HTTP RESPONSE 200 {"date":"Thu, 13 May 2021 07:15:51 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-13T07:15:51.851Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/poller-e5529 [none]
+[debug] [2021-05-13T07:15:52.493Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/poller-e5529 200
+[debug] [2021-05-13T07:15:52.494Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/poller-e5529 {"projectId":"poller-e5529","projectNumber":"329255893628","displayName":"Poller","name":"projects/poller-e5529","resources":{"hostingSite":"poller-e5529","storageBucket":"poller-e5529.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'poller-e5529'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-05-13T07:15:52.505Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-13T07:15:52.506Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-13T07:15:52.848Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Thu, 13 May 2021 07:15:52 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-13T07:15:52.897Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/poller-e5529/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}

@@ -17,7 +17,8 @@ import {
 	BOOKMARK_POLL_URL,
 	UNBOOKMARK_POLL_URL,
 	LOAD_BOOKMARKED_POLLS_URL,
-	REPORT_POLL_URL
+	REPORT_POLL_URL,
+	RELOAD_POLL_URL
 } from '../../configs/endpoints';
 
 function* loadRecommendedPollsStart(action) {
@@ -312,6 +313,30 @@ const sendReportRequestFor = (pollId, reason) => {
 	return axios.post(REPORT_POLL_URL, { pollId, reason });
 };
 
+function* reloadPollStart(action) {
+	yield put(pollsActions.reloadPollProgress());
+	try {
+		const { pollId } = action.payload;
+		const response = yield sendReloadRequestFor(pollId);
+		if (response.status === 200) {
+			yield put(
+				pollsActions.reloadPollSuccess({ poll: response.data.poll })
+			);
+		}
+	} catch (error) {
+		if (error.response.status === 500) {
+			yield put(
+				pollsActions.reloadPollFailure(error.response.data.message)
+			);
+		}
+	}
+	yield put(pollsActions.reloadPollEnd());
+}
+
+const sendReloadRequestFor = (pollId) => {
+	return axios.get(RELOAD_POLL_URL + pollId);
+};
+
 function* pollsSaga() {
 	yield takeEvery(
 		pollsActionTypes.LOAD_RECOMMENDED_POLLS_START,
@@ -349,6 +374,7 @@ function* pollsSaga() {
 		unbookmarkPollStart
 	);
 	yield takeEvery(pollsActionTypes.REPORT_POLL_START, reportPollStart);
+	yield takeEvery(pollsActionTypes.RELOAD_POLL_START, reloadPollStart);
 }
 
 export default pollsSaga;

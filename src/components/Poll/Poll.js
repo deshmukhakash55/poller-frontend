@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { humanizeTime } from '../../utility/date';
 import Button from '@material-ui/core/Button';
@@ -24,6 +24,7 @@ import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import {
 	addPollResponseStart,
 	bookmarkPollStart,
+	reloadPollStart,
 	reportPollStart,
 	unbookmarkPollStart
 } from '../../store/actions/polls.actions';
@@ -53,6 +54,16 @@ const Poll = (props) => {
 	const handleReportModalClose = () => {
 		setShouldOpenReportModal(false);
 	};
+
+	useEffect(() => {
+		const endDateTimer = setTimeout(() => {
+			props.reloadPollStart(props.poll.id);
+		}, new Date(props.poll.endDate).getTime() - new Date().getTime());
+		return () => {
+			clearTimeout(endDateTimer);
+		};
+		// eslint-disable-next-line
+	}, []);
 
 	const [reason, setReason] = useState('');
 
@@ -347,7 +358,8 @@ const mapDispatchToProps = (dispatch) => ({
 	bookmarkPollStart: (pollId) => dispatch(bookmarkPollStart(pollId)),
 	unbookmarkPollStart: (pollId) => dispatch(unbookmarkPollStart(pollId)),
 	reportPollStart: (pollId, reason) =>
-		dispatch(reportPollStart(pollId, reason))
+		dispatch(reportPollStart(pollId, reason)),
+	reloadPollStart: (pollId) => dispatch(reloadPollStart(pollId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Poll);

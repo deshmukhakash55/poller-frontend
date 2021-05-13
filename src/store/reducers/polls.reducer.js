@@ -60,7 +60,11 @@ const initialPollsState = {
 	isReportPollProgress: false,
 	isReportPollSuccess: false,
 	isReportPollFailure: false,
-	reportPollError: ''
+	reportPollError: '',
+	isReloadPollProgress: false,
+	isReloadPollSuccess: false,
+	isReloadPollFailure: false,
+	reloadPollError: ''
 };
 
 export const pollsReducer = (state = initialPollsState, action) => {
@@ -561,6 +565,74 @@ export const pollsReducer = (state = initialPollsState, action) => {
 				isReportPollFailure: true,
 				reportPollError: action.payload.reason
 			};
+		case pollsActionTypes.RELOAD_POLL_PROGRESS:
+			return {
+				...state,
+				isReloadPollProgress: true,
+				isReloadPollSuccess: false,
+				isReloadPollFailure: false,
+				reloadPollError: ''
+			};
+		case pollsActionTypes.RELOAD_POLL_SUCCESS:
+			const updatedRecommendedPollsWithReloadedPoll =
+				getUpdatePollsAfterUpdatingPollById(
+					state.recommendedPolls,
+					action.payload.poll
+				);
+			const updatedTrendingPollsWithReloadedPoll =
+				getUpdatePollsAfterUpdatingPollById(
+					state.trendingPolls,
+					action.payload.poll
+				);
+			const updatedYourPollsWithReloadedPoll =
+				getUpdatePollsAfterUpdatingPollById(
+					state.yourPolls,
+					action.payload.poll
+				);
+			const updatedFollowingsPollsWithReloadedPoll =
+				getUpdatePollsAfterUpdatingPollById(
+					state.followingsPolls,
+					action.payload.poll
+				);
+			const updatedBookmarkedPollsWithReloadedPoll =
+				getUpdatePollsAfterUpdatingPollById(
+					state.bookmarkedPolls,
+					action.payload.poll
+				);
+			const updatedRespondedPollsWithReloadedPoll =
+				getUpdatePollsAfterUpdatingPollById(
+					state.respondedPolls,
+					action.payload.poll
+				);
+			const updatedEndedPollsWithReloadedPoll = addInPollsIfEnded(
+				state.endedPolls,
+				action.payload.poll
+			);
+			return {
+				...state,
+				recommendedPolls: updatedRecommendedPollsWithReloadedPoll,
+				endedPolls: updatedEndedPollsWithReloadedPoll,
+				respondedPolls: updatedRespondedPollsWithReloadedPoll,
+				followingsPolls: updatedFollowingsPollsWithReloadedPoll,
+				bookmarkedPolls: updatedBookmarkedPollsWithReloadedPoll,
+				yourPolls: updatedYourPollsWithReloadedPoll,
+				trendingPolls: updatedTrendingPollsWithReloadedPoll,
+				isReloadPollSuccess: true,
+				isReloadPollFailure: false,
+				reloadPollError: ''
+			};
+		case pollsActionTypes.RELOAD_POLL_FAILURE:
+			return {
+				...state,
+				isReloadPollSuccess: false,
+				isReloadPollFailure: true,
+				reloadPollError: action.payload.reason
+			};
+		case pollsActionTypes.RELOAD_POLL_END:
+			return {
+				...state,
+				isReloadPollProgress: false
+			};
 		case pollsActionTypes.INITIALIZE_POLLS:
 			return {
 				...initialPollsState
@@ -609,4 +681,22 @@ const getPollsWithUpdateResponseOfPollIn = (polls, payload) => {
 	const updatedPolls = [...polls];
 	updatedPolls[respondedToPollIndex] = respondedToPoll;
 	return [...updatedPolls];
+};
+
+const getUpdatePollsAfterUpdatingPollById = (polls, reloadedPoll) => {
+	const reloadedPollIndex = polls.findIndex(
+		(poll) => poll.id === reloadedPoll.id
+	);
+	if (reloadedPollIndex !== -1) {
+		polls[reloadedPollIndex] = { ...reloadedPoll };
+	}
+	return [...polls];
+};
+
+const addInPollsIfEnded = (endedPolls, poll) => {
+	if (new Date(poll.endDate) > new Date()) {
+		return [...endedPolls, poll];
+	} else {
+		return [...endedPolls];
+	}
 };

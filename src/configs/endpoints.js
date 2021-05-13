@@ -18,6 +18,7 @@ export const LOAD_FOLLOWINGS_POLLS_URL = BASE_URL + 'followings-polls';
 export const LOAD_RESPONDED_POLLS_URL = BASE_URL + 'responded-polls';
 export const LOAD_ENDED_POLLS_URL = BASE_URL + 'ended-polls';
 export const LOAD_BOOKMARKED_POLLS_URL = BASE_URL + 'bookmarked-polls';
+export const RELOAD_POLL_URL = 'get-poll/';
 
 export const RECOMMENDED_FOLLOWINGS_URL = BASE_URL + 'recommended-followings/';
 export const ADD_NEW_FOLLOWING_URL = BASE_URL + 'new-following';
