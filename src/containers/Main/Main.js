@@ -20,7 +20,8 @@ import * as classes from './Main.module.css';
 const CssTabs = withStyles({
 	root: {
 		'& .MuiTabs-scroller': {
-			backgroundColor: '#fbfbf8'
+			backgroundColor: '#fbfbf8',
+			width: '100%'
 		}
 	}
 })(Tabs);

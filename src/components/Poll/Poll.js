@@ -56,6 +56,9 @@ const Poll = (props) => {
 	};
 
 	useEffect(() => {
+		if (new Date(props.poll.endDate) < new Date()) {
+			return;
+		}
 		const endDateTimer = setTimeout(() => {
 			props.reloadPollStart(props.poll.id);
 		}, new Date(props.poll.endDate).getTime() - new Date().getTime());
