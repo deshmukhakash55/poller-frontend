@@ -1,5 +1,5 @@
-// const BASE_URL = 'https://poller-backend.herokuapp.com/';
-const BASE_URL = 'http://localhost:8000/';
+const BASE_URL = 'https://poller-backend.herokuapp.com/';
+// const BASE_URL = 'http://localhost:8000/';
 
 export const REGISTER_URL = BASE_URL + 'register';
 export const VERIFY_EMAIL_URL = BASE_URL + 'verify';
