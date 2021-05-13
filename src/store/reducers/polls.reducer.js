@@ -8,7 +8,7 @@ const initialPollsState = {
 	respondedPolls: [],
 	endedPolls: [],
 	bookmarkedPolls: [],
-	respondedPollId: null,
+	respondingPollIds: [],
 	isLoadRecommendedPollsProgress: false,
 	isLoadRecommendedPollsSuccess: false,
 	isLoadRecommendedPollsFailure: false,
@@ -121,19 +121,33 @@ export const pollsReducer = (state = initialPollsState, action) => {
 				addNewPollError: action.payload.reason
 			};
 		case pollsActionTypes.ADD_POLL_RESPONSE_PROGRESS:
+			let newRespondingPollIds = [...state.respondingPollIds];
+			if (
+				!state.respondingPollIds.includes(
+					action.payload.respondedPollId
+				)
+			) {
+				newRespondingPollIds = [
+					...state.respondingPollIds,
+					action.payload.respondingPollId
+				];
+			}
 			return {
 				...state,
-				respondedPollId: action.payload.respondedPollId,
+				respondingPollIds: newRespondingPollIds,
 				isAddPollResponseProgress: true,
 				isAddPollResponseSuccess: false,
 				isAddPollResponseFailure: false,
 				addPollResponseError: ''
 			};
 		case pollsActionTypes.ADD_POLL_RESPONSE_END:
+			const respondingPollIds = state.respondingPollIds.filter(
+				(pollId) => pollId === action.payload.respondedPayloadId
+			);
 			return {
 				...state,
 				isAddPollResponseProgress: false,
-				respondedPollId: null
+				respondingPollIds
 			};
 		case pollsActionTypes.ADD_POLL_RESPONSE_SUCCESS:
 			const recommendedPollsWithUpdatedResponse =

@@ -96,7 +96,7 @@ function* addPollResponseStart(action) {
 			);
 		}
 	}
-	yield put(pollsActions.addPollResponseEnd());
+	yield put(pollsActions.addPollResponseEnd(action.payload.pollId));
 }
 
 const sendAddPollResponseRequestFor = (pollResponseDetails) => {

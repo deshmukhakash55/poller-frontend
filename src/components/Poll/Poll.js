@@ -76,12 +76,15 @@ const Poll = (props) => {
 		setShouldOpenReportModal(false);
 	};
 
+	const ifPollIsDisabled = () =>
+		props.respondingPollIds.includes(props.poll.id);
+
 	const optionsContent = props.poll.options.map((option, index) => (
 		<div key={index} className={classes.PollOption}>
 			<Button
 				className={classes.PollOptionButton}
 				onClick={() => handlePollOptionButtonClick(index)}
-				disabled={props.respondedPollId === props.poll.id}
+				disabled={ifPollIsDisabled()}
 				style={{
 					borderColor: `${
 						optionBorderColors[index % optionBorderColors.length]
@@ -335,7 +338,7 @@ const mapStateToProps = (state) => ({
 	isReportPollProgress: state.poll.isReportPollProgress,
 	isReportPollSuccess: state.poll.isReportPollSuccess,
 	isReportPollFailure: state.poll.isReportPollFailure,
-	respondedPollId: state.poll.respondedPollId
+	respondingPollIds: state.poll.respondingPollIds
 });
 
 const mapDispatchToProps = (dispatch) => ({
