@@ -49,8 +49,9 @@ export const addPollResponseStart = (pollId, selectedOptionIndex) => ({
 	payload: { pollId, selectedOptionIndex }
 });
 
-export const addPollResponseProgress = () => ({
-	type: pollsActionTypes.ADD_POLL_RESPONSE_PROGRESS
+export const addPollResponseProgress = (respondedPollId) => ({
+	type: pollsActionTypes.ADD_POLL_RESPONSE_PROGRESS,
+	payload: { respondedPollId }
 });
 
 export const addPollResponseEnd = () => ({

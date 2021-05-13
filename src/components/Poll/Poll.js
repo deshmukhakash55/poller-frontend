@@ -81,7 +81,7 @@ const Poll = (props) => {
 			<Button
 				className={classes.PollOptionButton}
 				onClick={() => handlePollOptionButtonClick(index)}
-				disabled={props.isAddPollResponseProgress}
+				disabled={props.respondedPollId === props.poll.id}
 				style={{
 					borderColor: `${
 						optionBorderColors[index % optionBorderColors.length]
@@ -334,7 +334,8 @@ const mapStateToProps = (state) => ({
 	isAddPollResponseProgress: state.poll.isAddPollResponseProgress,
 	isReportPollProgress: state.poll.isReportPollProgress,
 	isReportPollSuccess: state.poll.isReportPollSuccess,
-	isReportPollFailure: state.poll.isReportPollFailure
+	isReportPollFailure: state.poll.isReportPollFailure,
+	respondedPollId: state.poll.respondedPollId
 });
 
 const mapDispatchToProps = (dispatch) => ({

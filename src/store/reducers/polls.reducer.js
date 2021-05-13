@@ -8,6 +8,7 @@ const initialPollsState = {
 	respondedPolls: [],
 	endedPolls: [],
 	bookmarkedPolls: [],
+	respondedPollId: null,
 	isLoadRecommendedPollsProgress: false,
 	isLoadRecommendedPollsSuccess: false,
 	isLoadRecommendedPollsFailure: false,
@@ -122,6 +123,7 @@ export const pollsReducer = (state = initialPollsState, action) => {
 		case pollsActionTypes.ADD_POLL_RESPONSE_PROGRESS:
 			return {
 				...state,
+				respondedPollId: action.payload.respondedPollId,
 				isAddPollResponseProgress: true,
 				isAddPollResponseSuccess: false,
 				isAddPollResponseFailure: false,
@@ -130,7 +132,8 @@ export const pollsReducer = (state = initialPollsState, action) => {
 		case pollsActionTypes.ADD_POLL_RESPONSE_END:
 			return {
 				...state,
-				isAddPollResponseProgress: false
+				isAddPollResponseProgress: false,
+				respondedPollId: null
 			};
 		case pollsActionTypes.ADD_POLL_RESPONSE_SUCCESS:
 			const recommendedPollsWithUpdatedResponse =

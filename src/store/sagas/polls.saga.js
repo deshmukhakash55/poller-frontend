@@ -68,7 +68,7 @@ const sendAddNewPollRequestFor = (poll) => {
 };
 
 function* addPollResponseStart(action) {
-	yield put(pollsActions.addPollResponseProgress());
+	yield put(pollsActions.addPollResponseProgress(action.payload.pollId));
 	try {
 		const response = yield sendAddPollResponseRequestFor(action.payload);
 		if (response.status === 201) {
