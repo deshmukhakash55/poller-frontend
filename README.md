@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# Poller
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://firebasestorage.googleapis.com/v0/b/poller-e5529.appspot.com/o/logo.png?alt=media&token=17e8705a-b234-43e0-85fb-ffc145d8335e)
 
-## Available Scripts
+Poller is MERN stack social media project to start your polls and also respond to some of others polls.
 
-In the project directory, you can run:
+## For Demo, please visit:
 
-### `npm start`
+https://poller-e5529.web.app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Poller uses following tech tack and tools :
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Frontend:
 
-### `npm test`
+-   React
+-   Redux
+-   Redux Saga
+-   React router
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+-   Node.js
+-   Express
+-   Sendgrid - For emails
+-   Mongoose - MongoDB ORM
+-   Morgan - Reqeust logging
+-   socket.io - Notificatons
+-   Firebase - file storage
+-   MongoDB - Database
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+-   Frontend - Firebase Hosting
+-   Backend - Heroku
+-   Database - MongoDB Atlas
 
-### `npm run build` fails to minify
+## How to deploy the project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   Frontend
+    Since it's just a react project, just follow below steps:
+    1. Clone the [`poller-frontend`](https://github.com/deshmukhakash55/poller-frontend.git) project.
+    2. Open terminal and navigate to the project folder
+    3. Execute `npm i` to download dependencies
+    4. Execute `npm run build` to generate prod build.
+       or
+    5. Execute `npm start` to start local server.
+    6. Deploy the build from `dist\` folder on your server.
+
+Note - Frontend will rest endpoints which has base url starting with `https://poller-backend.herokuapp.com`, so in case of your base url varies, make sure you update it in `endpoints.js` file
+
+-   Database
+    Get the MongoDB URI. Make sure the DB user has proper privileges. Create the Database `poller`
+
+-   Backend
+    Backend for poller is Node.js. So follow the below steps to execute it
+    1. Clone the [`poller-backend`](https://github.com/deshmukhakash55/poller-backend.git) project.
+    2. Open the terminal and navigate to the folder.
+    3. Execute `npm i`.
+    4. Create a folder named `configs.js` in project root which exports a object as default.
+    5. Create a account on Sendgrid for mailing services and add your API key to the Object.
+       ![image](<https://firebasestorage.googleapis.com/v0/b/poller-e5529.appspot.com/o/carbon%20(6).png?alt=media&token=59ba2189-8b17-44cf-9d17-40c1d39008d2>)
+    6. Also populate Object with MONGODB uri and other details.
+    7. Create a account on firebase (if you don't have one) and then create a new project.
+    8. Create a `keys` folder in project root.
+    9. Get the admin key JSON and add it in `keys` folder.
+
+And you are good to go!!!!
+
+## Login Page
+
+![image](https://firebasestorage.googleapis.com/v0/b/poller-e5529.appspot.com/o/login.png?alt=media&token=07b83438-a642-4331-aa1c-d41c6360df1f)
+
+## Register Page
+
+![image](https://firebasestorage.googleapis.com/v0/b/poller-e5529.appspot.com/o/register.png?alt=media&token=9a5396b2-5664-4039-a4f8-61a8301e32bc)
+
+## Main Page
+
+![image](https://firebasestorage.googleapis.com/v0/b/poller-e5529.appspot.com/o/main.png?alt=media&token=cd0dd7b0-cf66-45a3-8cc3-872ec7ad3174)
+
+## Search
+
+![image](https://firebasestorage.googleapis.com/v0/b/poller-e5529.appspot.com/o/search.png?alt=media&token=69a1946b-0950-41de-8727-212e591d20fc)
+
+## Search
+
+![image](https://firebasestorage.googleapis.com/v0/b/poller-e5529.appspot.com/o/search.png?alt=media&token=69a1946b-0950-41de-8727-212e591d20fc)
+
+## New Poll
+
+![image](https://firebasestorage.googleapis.com/v0/b/poller-e5529.appspot.com/o/newpoll.png?alt=media&token=0ac9f96e-dc7a-42c5-b797-705455134079)
+
+## Notifications Page
+
+![image](https://firebasestorage.googleapis.com/v0/b/poller-e5529.appspot.com/o/notifications.png?alt=media&token=ca051d14-29fd-4a6a-9bd7-b97af00f5858)
+
+## Followings Page
+
+![image](https://firebasestorage.googleapis.com/v0/b/poller-e5529.appspot.com/o/profile.png?alt=media&token=68e90aee-60b7-4fab-8d02-fd6cd5a961aa)
+
+And if you like the project, make sure you star the project so others can also learn.
