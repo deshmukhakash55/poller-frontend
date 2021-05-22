@@ -24,7 +24,7 @@ import { watchNetworkStatus } from './configs/network';
 
 import './index.css';
 
-const prod = false;
+const prod = true;
 
 const reducers = combineReducers({
 	auth: authReducer,

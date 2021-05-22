@@ -159,7 +159,11 @@ const Poll = (props) => {
 							></div>
 						</div>
 						<div className={classes.OptionStatPercentage}>
-							{pollResponseStat.percentage.toFixed(1)} %
+							{!!pollResponseStat.percentage ? (
+								<React.Fragment>
+									{pollResponseStat.percentage.toFixed(1)} %
+								</React.Fragment>
+							) : null}
 						</div>
 					</div>
 				))}
